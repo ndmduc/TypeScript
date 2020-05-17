@@ -1,0 +1,2 @@
+# TypeScript
+https://www.tutorialspoint.com/typescript/typescript_basic_syntax.htm
