@@ -1,6 +1,18 @@
 // var message:string = "Hello world"
 // console.log(message);
-
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // var name1:string = "John"; 
 // var score1:number = 50;
 // var score2:number = 42.50
@@ -9,22 +21,18 @@
 // console.log("first score: "+score1) 
 // console.log("second score: "+score2) 
 // console.log("sum of the scores: "+sum)
-
 // var str = '1' 
 // var str2:number = <number> <any> str   //str is now of type number 
 // console.log(typeof(str2))
-
 // var num = 2;    // data type inferred as  number 
 // console.log("value of num "+num); 
 // num = "12";
 // console.log(num);
-
 // Variable scope
 // var global_num=12;
 // class Numbers{
 //     num_val=13;
 //     static sval = 10;
-
 //     storeNum():void{
 //         var local_num=14;
 //     }
@@ -34,21 +42,18 @@
 // var obj = new Numbers()
 // console.log("Local val: " + obj.num_val)
 // console.log(typeof global_num)
-
 // foreach
 // var j:any;
 // var n:any = "a b c"
 // for(j in n){
 //     console.log(n[j])
 // }
-
 // // function
 // function greet():string{
 //     return "Hello world"
 // }
 // var msg = greet()
 // console.log(msg)
-
 // function test_param(n1, s1:string){
 //     console.log(n1)
 //     console.log(s1)
@@ -58,7 +63,6 @@
 // function disp_details(id:number, name:string, mail_id?:string){
 //     console.log("ID:", id); 
 //    console.log("Name",name); 
-
 //    if(mail_id!=undefined)
 //    console.log("Email Id",mail_id)
 // }
@@ -71,7 +75,6 @@
 //     for(i=0;i<nums.length;i++){
 //         sum+=nums[i]
 //     }
-
 //     console.log("sum of the numbers",sum)
 // }
 // addNumbers(1,2,3) 
@@ -96,7 +99,6 @@
 //     console.log(x)
 // }
 // foo(100)
-
 // Number
 // var month=0
 // if(month<=0 || month>12){
@@ -105,7 +107,6 @@
 // }else{
 //     console.log("Value accepted")
 // }
-
 // Prototype
 // function employee(id:number, name:string){
 //     this.id = id
@@ -116,7 +117,6 @@
 // console.log("Employee 's Id: "+emp.id) 
 // console.log("Employee's name: "+emp.name) 
 // console.log("Employee's Email ID: "+emp.email)
-
 // Array
 // var alphas:string[]
 // alphas=["1","2","3","4"] 
@@ -127,21 +127,17 @@
 // for(j in alphas){
 //     console.log(alphas[j])
 // }
-
 // Tuple
 // var mytuple = [10, "Hello"]
 // console.log(mytuple[0]) 
 // console.log(mytuple[1])
 // var mytuple = [10,"Hello","World","typeScript"]; 
 // console.log("Items before push "+mytuple.length)    // returns the tuple size 
-
 // mytuple.push(12)                                    // append value to the tuple 
 // console.log("Items after push "+mytuple.length) 
 // console.log("Items before pop "+mytuple.length) 
 // console.log(mytuple.pop()+" popped from the tuple") // removes and returns the last item
-  
 // console.log("Items after pop "+mytuple.length)
-
 // Union
 // var val:string|number
 // val=12
@@ -166,17 +162,14 @@
 // var i:number; 
 // arr = [1,2,4] 
 // console.log("**numeric array**")  
-
 // for(i = 0;i<arr.length;i++) { 
 //    console.log(arr[i]) 
 // }  
-
 // arr = ["Mumbai","Pune","Delhi"] 
 // console.log("**string array**")  
 // for(i = 0;i<arr.length;i++) { 
 //     console.log(arr[i]) 
 //  }
-
 // Interface
 // interface IPerson{
 //     firstName:string,
@@ -192,7 +185,6 @@
 // console.log(customer.firstName) 
 // console.log(customer.lastName) 
 // console.log(customer.sayHi())
-
 // interface RunOptions{
 //     program:string,
 //     commandLine:string[]|string|(()=>string)
@@ -205,7 +197,6 @@
 // options = {program:"test11", commandLine:()=>{return "Hello world"}}
 // var fn:any = options.commandLine
 // console.log(fn())
-
 // interface namelist{
 //     [index:number]:string
 // }
@@ -216,7 +207,6 @@
 // var agelist:ages;
 // // agelist["jon"]=23
 // // agelist[2]="nnie"
-
 // interface Person{
 //     age:number
 // }
@@ -230,144 +220,137 @@
 // interface IParent1 { 
 //     v1:number 
 //  } 
- 
 //  interface IParent2 { 
 //     v2:number 
 //  } 
 //  interface Child extends IParent1, IParent2 { } 
 // var Iobj:Child = { v1:12, v2:23} 
 // console.log("value 1: "+Iobj.v1+" value 2: "+Iobj.v2)
-
 // Class
-class Car{
-    engine:string;
-
-    constructor(engine:string){
-        this.engine = engine
+var Car = /** @class */ (function () {
+    function Car(engine) {
+        this.engine = engine;
     }
-
-    disp():void{
-        console.log("Engine is: "+ this.engine)
-    }
-}
-var obj = new Car("Engine 1")
-console.log("Reading attribute engine: "+obj.engine)
-obj.disp()
-
+    Car.prototype.disp = function () {
+        console.log("Engine is: " + this.engine);
+    };
+    return Car;
+}());
+var obj = new Car("Engine 1");
+console.log("Reading attribute engine: " + obj.engine);
+obj.disp();
 // Class inheritance
-class Shape{
-    Area:number
-
-    constructor(a:number){
-        this.Area = a
+var Shape = /** @class */ (function () {
+    function Shape(a) {
+        this.Area = a;
     }
-}
-class Circle extends Shape{
-    disp():void{
-        console.log("Area of the circle: " +this.Area)
+    return Shape;
+}());
+var Circle = /** @class */ (function (_super) {
+    __extends(Circle, _super);
+    function Circle() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-}
-var obj1 = new Circle(134)
-obj1.disp()
-
+    Circle.prototype.disp = function () {
+        console.log("Area of the circle: " + this.Area);
+    };
+    return Circle;
+}(Shape));
+var obj1 = new Circle(134);
+obj1.disp();
 // Class inheritance multi-level
-class Root{
-    str:string
-}
-class Child extends Root{}
-class Leaf extends Child{}
-var obj2 = new Leaf()
-obj2.str = "hello"
-console.log(obj2.str)
-
+var Root = /** @class */ (function () {
+    function Root() {
+    }
+    return Root;
+}());
+var Child = /** @class */ (function (_super) {
+    __extends(Child, _super);
+    function Child() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Child;
+}(Root));
+var Leaf = /** @class */ (function (_super) {
+    __extends(Leaf, _super);
+    function Leaf() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return Leaf;
+}(Child));
+var obj2 = new Leaf();
+obj2.str = "hello";
+console.log(obj2.str);
 // Class inheritance & method overriding
-class PrinterClass{
-    doPrint():void{
-        console.log("doPrint() from Parent called.")
+var PrinterClass = /** @class */ (function () {
+    function PrinterClass() {
     }
-}
-class StringPrinter extends PrinterClass { 
-    doPrint():void { 
-       super.doPrint() 
-       console.log("doPrint() is printing a string…")
-    } 
- } 
- 
- var obj3 = new StringPrinter() 
- obj3.doPrint()
-
- // Static
- class StaticMem{
-     static num:Number;
-
-     static disp():void{
-         console.log("The value of num is: " + StaticMem.num)
-     }
- }
-
- StaticMem.num =12;
- StaticMem.disp();
-
- // instanceof
- class Person{}
- var obj4=new Person()
- var isPerson = obj4 instanceof Person;
- console.log("obj4 is an instance of person " + isPerson);
-
- // Data hiding
- class Encapsulate{
-     str:string="hello"
-     private str2:string="world"
- }
- var obj5=new Encapsulate()
- console.log(obj5.str)
-//  console.log(obj5.str2)
-
-// class & interface
-interface ILoan{
-    interest:number
-}
-class AgriLoan implements ILoan{
-    interest:number
-    rebate:number
-
-    constructor(interest:number, rebate:number){
-        this.interest = interest
-        this.rebate = rebate
+    PrinterClass.prototype.doPrint = function () {
+        console.log("doPrint() from Parent called.");
+    };
+    return PrinterClass;
+}());
+var StringPrinter = /** @class */ (function (_super) {
+    __extends(StringPrinter, _super);
+    function StringPrinter() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-}
-var obj6 = new AgriLoan(10,1)
-console.log("Interest is: " + obj6.interest + " Rebate: " + obj6.rebate)
-
+    StringPrinter.prototype.doPrint = function () {
+        _super.prototype.doPrint.call(this);
+        console.log("doPrint() is printing a string…");
+    };
+    return StringPrinter;
+}(PrinterClass));
+var obj3 = new StringPrinter();
+obj3.doPrint();
+// Static
+var StaticMem = /** @class */ (function () {
+    function StaticMem() {
+    }
+    StaticMem.disp = function () {
+        console.log("The value of num is: " + StaticMem.num);
+    };
+    return StaticMem;
+}());
+StaticMem.num = 12;
+StaticMem.disp();
+// instanceof
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    return Person;
+}());
+var obj4 = new Person();
+var isPerson = obj4 instanceof Person;
+console.log("obj4 is an instance of person " + isPerson);
+// Data hiding
+var Encapsulate = /** @class */ (function () {
+    function Encapsulate() {
+        this.str = "hello";
+        this.str2 = "world";
+    }
+    return Encapsulate;
+}());
+var obj5 = new Encapsulate();
+console.log(obj5.str);
+var AgriLoan = /** @class */ (function () {
+    function AgriLoan(interest, rebate) {
+        this.interest = interest;
+        this.rebate = rebate;
+    }
+    return AgriLoan;
+}());
+var obj6 = new AgriLoan(10, 1);
+console.log("Interest is: " + obj6.interest + " Rebate: " + obj6.rebate);
 // Object
-var person={
-    firstName:"Tom",
-    lastName:"Hanks",
-    sayHello:function(){} // type template
+var person = {
+    firstName: "Tom",
+    lastName: "Hanks",
+    sayHello: function () { } // type template
 };
-person.sayHello = function(){
-    console.log("hello "+person.firstName)
-}
-console.log(person.firstName) 
-console.log(person.lastName)
-person.sayHello()
-
-var invokeperson=function(ob7: {firstName:string, lastName:string}){
-    console.log("first name :"+ob7.firstName) 
-   console.log("last name :"+ob7.lastName)
-}
-invokeperson(person)
-invokeperson({firstName:"Sachin", lastName:"Tencuh"})
-
-// Duck typing
-interface IPoint{
-    x:number
-    y:number
-}
-function addPoints(p1:IPoint, p2:IPoint):IPoint{
-    var x = p1.x + p2.x 
-   var y = p1.y + p2.y 
-   return {x:x,y:y}
-}
-var newPoint=addPoints({x:3,y:4}, {x:4,y:4})
-// var newPoint2 = addPoints({x:1},{x:4,y:3}) //error
+person.sayHello = function () {
+    console.log("hello " + person.firstName);
+};
+console.log(person.firstName);
+console.log(person.lastName);
+person.sayHello();
